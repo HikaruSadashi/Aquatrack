@@ -19,3 +19,9 @@ postgresql.log
 .env
 cockroach*
 build/backend
+Frontend - Copy/Data/FISS_OBSPT.csv
+Frontend - Copy/index.html
+Frontend - Copy/logo.png
+Frontend - Copy/script.js
+Frontend - Copy/style.css
+Frontend/Freshwater_Fish.geojson

@@ -33,8 +33,12 @@ function initMap(){
            ["Lake Eerie", 42.71825338399616, -80.11914338639328], 
            ["Lake Eerie", 42.78868523461886, -79.35178788642143], 
            ["Lake Eerie", 42.7987403931653, -79.05032679714678]
-    
+
+           
+           ['Rainbow Trout', 1678861.973, 6442826.687], ['Brook Trout', 1797320.331, 6310040.049], ['Rainbow Trout', 2127602.147, 5685815.342], ['Brook Trout', 1949984.175, 5748573.146], ['Rainbow Trout', 1820765.814, 5620791.386], ['Brook Trout', 1946267.469, 5740227.102], ['Brook Trout', 1624904.858, 6283573.878], ['Rainbow Trout', 1780891.67, 5652792.314], ['Rainbow Trout', 1792750.328, 5515488.857], ['Rainbow Trout', 1788513.034, 5515963.536], ['Rainbow Trout', 2201863.901, 5935070.82], ['Rainbow Trout', 2186833.993, 5935456.41], ['Rainbow Trout', 1885546.687, 5904127.548], ['Westslope (Yellowstone) Cutthroat Trout', 2443872.577, 5785077.915], ['Rainbow Trout', 1723587.334, 6062634.534], ['Rainbow Trout', 1780891.67, 5652792.314], ['Rainbow Trout', 2296182.029, 5845349.569], ['Brook Trout', 2020007.707, 5771274.733], ['Rainbow Trout', 1821284.007, 5608415.667], ['Rainbow Trout', 2030372.706, 5745893.056], ['Rainbow Trout', 1683600.013, 5584646.308], ['Rainbow Trout', 1948234.606, 5799991.184], ['Kokanee', 1896403.598, 5904998.879], ['Rainbow Trout', 1961464.899, 5731557.222], ['Rainbow Trout', 1951784.23, 5750371.727], ['Rainbow Trout', 2296182.029, 5845349.569], ['Rainbow Trout', 2298851.911, 5835299.236], ['Rainbow Trout', 1877315.941, 5889078.841], ['Rainbow Trout', 1738953.67, 5584689.455], ['Cutthroat Trout', 1728715.975, 5576177.721], ['Cutthroat Trout', 1611048.557, 5668363.105], ['Rainbow Trout', 2040002.887, 5685445.785], ['Cutthroat Trout (Anadromous)', 1797605.712, 5518698.742], ['Cutthroat Trout', 1583024.141, 5631156.851], ['Cutthroat Trout', 1599424.52, 5687814.366], ['Cutthroat Trout', 1725126.535, 5581886.456], ['Rainbow Trout', 1812078.717, 5622994.663]
         ];
+
+
         //Name
         //Lat,long
         
@@ -78,12 +82,7 @@ function initMap(){
                     duration: 10000,
                   },
                 },
-                onDataLoad: () => {
-                  /* eslint-disable no-undef */
-                  // @ts-ignore defined in include
-                  progress.done(); // hides progress bar
-                  /* eslint-enable no-undef */
-                },
+                
               }),
             ],
           });
