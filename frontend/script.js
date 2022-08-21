@@ -102,7 +102,7 @@ function initMap() {
 			infowindow.open(map, marker);
 		});
 	}
-	
+
 	*/
 
 	var circle = {
@@ -116,7 +116,7 @@ function initMap() {
 
 	//Name
 	//Lat,long
-	const markers = [
+	const json = [
 		{
 		  FSH_BSR_ID: "375786",
 		  LIFE_STAGE: "Fingerling",
@@ -135,26 +135,66 @@ function initMap() {
 		  X: "1901228.6",
 		  Y: "5812142.944"
 		}, ]
+	
+	//bruh
+
+	// Looping through all the entries from the JSON data
+	for(var i = 0; i < json.length; i++) {
+		// Current object
+		var obj = json[i];
+	
+		// Adding a new marker for the object
+		var marker = new google.maps.Marker({
+		  position: new google.maps.LatLng(obj.X,obj.Y),
+		  map: map,
+		  title: obj.SPECIES_NM // this works, giving the marker a title with the correct title
+		});
+		
+		// Adding a new info window for the object
+		var clicker = addClicker(marker, obj.SPECIES_NM);
+	  } // end loop
+	  
+	  
+	  // Adding a new click event listener for the object
+	  function addClicker(marker, content) {
+		google.maps.event.addListener(marker, 'click', function() {
+		  if (infowindow) {infowindow.close();}
+		  infowindow = new google.maps.InfoWindow({content: content});
+		  infowindow.open(map, marker);
+		  
+		});
+	  }
+
+	/*
+	const marker = new google.maps.Marker({
+		position: { lat: data.X, lng: data.Yo },
+		map,
+		title: data.SPECIES_NM,
+		icon: circle,
+	});
+	const infowindow = new google.maps.InfoWindow({
+		content: data.SPECIES_NM,
+	});
+	marker.addListener('click', () => {
+		infowindow.open(map, marker);
+	});
 
 	
-	
-	for (let i = 0; i < markers.length; i++) {
-		const currentMarker = markers[i];
-
+	$.each(markers, function(key, data)) {
 		const marker = new google.maps.Marker({
-			position: { lat: currentMarker[1], lng: currentMarker[2] },
+			position: { lat: data.X, lng: data.Yo },
 			map,
-			title: currentMarker[0],
+			title: data.SPECIES_NM,
 			icon: circle,
 		});
 		const infowindow = new google.maps.InfoWindow({
-			content: currentMarker[0] + 'Algae Deposit, High Algae Count',
+			content: data.SPECIES_NM,
 		});
 		marker.addListener('click', () => {
 			infowindow.open(map, marker);
 		});
-	}
-	//making markers from the csv
+	};
+	*/
 
 	const deckOverlay = new GoogleMapsOverlay({
 		layers: [
@@ -184,7 +224,8 @@ function initMap() {
 
 	deckOverlay.setMap(map);
 
-	/* const ctaLayer = new google.maps.KmlLayer({
+	/*
+	 const ctaLayer = new google.maps.KmlLayer({
             url: "https://openmaps.gov.bc.ca/kml/geo/layers/whse_fish.fiss_fish_obsrvtn_pnt_sp_loader.kml",
             map: map,
           }); */
