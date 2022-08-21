@@ -20,9 +20,7 @@ function initMap() {
 		zoom: 6,
 		mapId: '58acd8972fb835b2',
 	});
-
-
-	/*
+	
 	const markers = [
 		['Lake Superior', 47.77106903208776, -85.25131460472235],
 		['Lake Superior', 48.65801143095989, -87.32242685647755],
@@ -86,6 +84,15 @@ function initMap() {
 		['Rainbow Trout', 1812078.717, 5622994.663],
 	]; 
 
+	var circle = {
+		path: google.maps.SymbolPath.CIRCLE,
+		fillColor: 'red',
+		fillOpacity: 0.4,
+		scale: 4.5,
+		strokeColor: 'white',
+		strokeWeight: 1,
+	};
+
 	for (let i = 0; i < markers.length; i++) {
 		const currentMarker = markers[i];
 
@@ -103,41 +110,89 @@ function initMap() {
 		});
 	}
 
-	*/
-
-	var circle = {
-		path: google.maps.SymbolPath.CIRCLE,
-		fillColor: 'red',
-		fillOpacity: 0.4,
-		scale: 4.5,
-		strokeColor: 'white',
-		strokeWeight: 1,
-	};
-
+	/*
 	//Name
 	//Lat,long
-	const json = [
+	const json = [ 
 		{
-		  FSH_BSR_ID: "375786",
-		  LIFE_STAGE: "Fingerling",
-		  SPECIES_NM: "Rainbow Trout",
-		  WTRBDY_ID: "00776STHM",
-		  WTRBDY_TYE: "Lake",
-		  X: "1970959.471",
-		  Y: "5803206.897"
+			"FSH_BSR_ID": 375786,
+			"LIFE_STAGE": Fingerling,
+			"SPECIES_NM": RainbowTrout,
+			"WTRBDY_ID": Lake,
+			"WTRBDY_TYE": Lake,
+			"X": 1970959.471,
+			"Y": 5803206.897
 		},
 		{
-		  FSH_BSR_ID: "375787",
-		  LIFE_STAGE: "Fry",
-		  SPECIES_NM: "Rainbow Trout",
-		  WTRBDY_ID: "00423THOM",
-		  WTRBDY_TYE: "Lake",
-		  X: "1901228.6",
-		  Y: "5812142.944"
-		}, ]
+			"FSH_BSR_ID": 375787,
+			"LIFE_STAGE": Fry,
+			"SPECIES_NM": RainbowTrout,
+			"WTRBDY_ID": THOM,
+			"WTRBDY_TYE": Lake,
+			"X": 1901228.6,
+			"Y": 5812142.944
+		}
+	]
+
+
+	
+	var i = 0, result = [];
+
+	while(i < json.length){
+    	result.push([])
+    	for(var key in json[i].fields){
+        	result[result.length-1].push(json[i].fields[key])	
+    	}
+    	i++
+	}
+
+	document.write(JSON.stringify(result, null, 4));
 	
 	//bruh
 
+	console.log(result)
+
+	/*
+	for (let i = 0; i < result.length; i++) {
+		const currentMarker = result[i];
+
+		const marker = new google.maps.Marker({
+			position: { lat: currentMarker[1], lng: currentMarker[2] },
+			map,
+			title: currentMarker[0],
+			icon: circle,
+		});
+		const infowindow = new google.maps.InfoWindow({
+			content: currentMarker[0] + 'Bruh',
+		});
+		marker.addListener('click', () => {
+			infowindow.open(map, marker);
+		});
+	}
+
+
+	
+	/*
+	for (let i = 0; i < json.length; i++) {
+		var obj = json[i];
+
+		const marker = new google.maps.Marker({
+			position: { lat: obj.X, lng: obj.Y },
+			map,
+			title: obj.SPECIES_NM,
+			//icon: circle,
+		});
+		const infowindow = new google.maps.InfoWindow({
+			content: obj.SPECIES_NM,
+		});
+		marker.addListener('click', () => {
+			infowindow.open(map, marker);
+		});
+	}
+
+	*/
+	
+	/*
 	// Looping through all the entries from the JSON data
 	for(var i = 0; i < json.length; i++) {
 		// Current object
@@ -165,7 +220,7 @@ function initMap() {
 		});
 	  }
 
-	/*
+	
 	const marker = new google.maps.Marker({
 		position: { lat: data.X, lng: data.Yo },
 		map,
