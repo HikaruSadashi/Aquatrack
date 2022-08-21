@@ -1,24 +1,26 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <!-- API key AIzaSyAHQQtcJ459qM0WmTnVWSqT_W64WXjSrCk -->
-<html> 
-    <head>
-        <link rel="stylesheet" href="style.css">
-    
-        <title> 
-            Aquatrack           
-        </title>
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css" />
+		<div class="box"></div>
+		<title>Aquatrack</title>
 
-        <script src="https://unpkg.com/material-components-web@6.0.0/dist/material-components-web.min.js"></script>
-        <script src="https://unpkg.com/deck.gl@8.7.3/dist.min.js"></script>
-        <script src="https://unpkg.com/@deck.gl/google-maps@8.7.3/dist.min.js"></script>
-    </head>
-    <body class="background">
-        <div id = "map"></div>
-        <script src="script.js"></script>
-        <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjyFsxoXrAWF674HhnKXXP58RzB7MRM24&callback=initMap&libraries=&v=weekly"
-            async
-        ></script>
-    </body>
-    
+		<script src="https://unpkg.com/material-components-web@6.0.0/dist/material-components-web.min.js"></script>
+		<script src="https://unpkg.com/deck.gl@8.7.3/dist.min.js"></script>
+		<script src="https://unpkg.com/@deck.gl/google-maps@8.7.3/dist.min.js"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"
+			async
+		></script>
+	</head>
+	<body class="background">
+		<div id="map"></div>
+
+		<script src="script.js" async></script>
+		<script
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjyFsxoXrAWF674HhnKXXP58RzB7MRM24&callback=initMap&libraries=&v=weekly"
+			async
+		></script>
+	</body>
 </html>
