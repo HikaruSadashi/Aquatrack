@@ -6,7 +6,13 @@ hidden=[".config"]
 # directory= "/"
 
 [nix]
-channel = "stable-21_11"
+channel = "unstable"
+
+[languages.go]
+pattern = "**/*.go"
+
+[languages.go.languageServer]
+start = "gopls"
 
 [languages.html]
 pattern = "**/*.html"
