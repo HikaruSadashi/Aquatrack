@@ -1,4 +1,4 @@
-# Aquatrack
+# Aquatrack 🦈
 
 ## Problem
 Less than a third of Canada’s fish populations, 29.4 per cent, can confidently be considered healthy and 17 per cent are in the critical zone, where conservation actions are crucial.
